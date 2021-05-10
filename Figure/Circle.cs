@@ -11,6 +11,10 @@ namespace Figure
         
         public Circle(double radius)
         {
+            if (radius < 0)
+            {
+                throw new ArgumentException("Радиус должен быть положительным числом.");
+            }
             this.radius = radius;
         }
 

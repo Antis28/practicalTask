@@ -15,6 +15,10 @@ namespace Figure
         }
 
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public override double GetAcreage()
         {
             var semiPerimeter = (sideA + sideB + sideC) / 2;
@@ -25,6 +29,18 @@ namespace Figure
                                      * (semiPerimeter - sideC));
 
             return surface;
+        }
+
+        /// <summary>
+        /// Является ли треугольник прямоугольным.
+        /// </summary>
+        /// <returns>true - если прямоугольный</returns>
+        public bool IsRightTriangle()
+        {
+            var sumSquaresLegs = Math.Pow(sideA, 2) + Math.Pow(sideB, 2);
+            var hypotenuseSquare = Math.Pow(sideC, 2);
+            
+            return  Math.Abs(sumSquaresLegs - hypotenuseSquare) < 0.1f;
         }
     }
 }
